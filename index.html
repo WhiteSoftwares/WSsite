@@ -16,7 +16,6 @@
 body{
   background:white;
   color:#111;
-  position:relative;
   min-height:100vh;
   display:flex;
   flex-direction:column;
@@ -30,21 +29,19 @@ body{
   top:0;
   left:0;
   z-index:-1;
-  background:white;
 }
 
 /* HEADER */
 header{
   background:#4169E1;
   color:white;
-  padding:20px 25px;
+  padding:20px;
   font-size:32px;
-  font-weight:bold;
-  position:relative;
   text-align:center;
+  position:relative;
 }
 
-/* CARD DISCORD */
+/* DISCORD */
 .discord-card{
   position:absolute;
   top:15px;
@@ -53,25 +50,18 @@ header{
   background:white;
   border-radius:6px;
   overflow:hidden;
-  box-shadow:0 0 6px rgba(0,0,0,0.2);
-  text-align:center;
-  z-index:2;
 }
 
 .discord-card img{
   width:100%;
-  height:45px;
-  object-fit:cover;
 }
 
 .discord-card a{
   display:block;
   background:#4169E1;
   color:white;
-  text-decoration:none;
-  padding:4px;
-  font-weight:bold;
   font-size:10px;
+  text-decoration:none;
 }
 
 /* MENU */
@@ -81,13 +71,12 @@ nav{
   gap:40px;
   background:#2e52c2;
   padding:12px;
-  flex-wrap:wrap;
 }
 
 nav a{
   color:white;
-  text-decoration:none;
   font-weight:bold;
+  cursor:pointer;
 }
 
 /* CONTAINER */
@@ -98,38 +87,41 @@ nav a{
   flex:1;
 }
 
-/* TITULO DA SEÇÃO */
+/* SEÇÕES (IMPORTANTE) */
+.section{
+  display:none;
+}
+
+.section.active{
+  display:block;
+}
+
+/* TITULO */
 .title{
   text-align:center;
-  margin-bottom:50px;
+  margin-bottom:40px;
 }
 
 .title h1{
-  font-size:40px;
   color:#4169E1;
+  font-size:36px;
 }
 
 /* CARDS */
 .cards{
   display:flex;
-  justify-content:center;
   gap:40px;
+  justify-content:center;
   flex-wrap:wrap;
 }
 
 .card{
-  flex: 1 1 400px;
+  flex:1 1 400px;
   max-width:400px;
   border:3px solid #4169E1;
   border-radius:12px;
-  overflow:hidden;
-  background:white;
   text-align:center;
-  transition:0.25s;
-}
-
-.card:hover{
-  transform:scale(1.03);
+  overflow:hidden;
 }
 
 .card img{
@@ -138,53 +130,25 @@ nav a{
   object-fit:cover;
 }
 
-/* TEXTO */
 .card-content{
-  padding:25px;
-}
-
-.card-content h2{
-  font-size:28px;
-  margin-bottom:10px;
+  padding:20px;
 }
 
 /* BOTÃO */
 .btn{
   display:inline-block;
-  margin-top:15px;
+  margin-top:10px;
   background:#4169E1;
   color:white;
-  padding:14px 28px;
+  padding:12px 25px;
   border-radius:8px;
   text-decoration:none;
-  font-size:18px;
-  font-weight:bold;
-}
-
-.btn:hover{
-  background:#2e52c2;
-}
-
-/* FOOTER */
-footer{
-  background:#4169E1;
-  color:white;
-  text-align:center;
-  padding:20px;
-  margin-top:auto;
 }
 
 /* MOBILE */
 @media(max-width:600px){
   .cards{
     flex-direction:column;
-    align-items:center;
-  }
-  .title h1{
-    font-size:32px;
-  }
-  .discord-card{
-    width:40px;
   }
 }
 </style>
@@ -197,123 +161,105 @@ footer{
 <header>
   White Softwares
   <div class="discord-card">
-    <img src="discord.jpg" alt="Discord">
+    <img src="discord.jpg">
     <a href="https://discord.gg/ZhT2fgQtBN" target="_blank">Discord</a>
   </div>
 </header>
 
 <nav>
-  <a href="#downloads">Downloads</a>
-  <a href="#senhas">Senhas</a>
+  <a onclick="showSection('downloads')">Downloads</a>
+  <a onclick="showSection('senhas')">Senhas</a>
 </nav>
 
 <div class="container">
 
 <!-- DOWNLOADS -->
-<div class="title">
-  <h1 id="downloads">Downloads</h1>
-  <p>Selecione o software que deseja baixar</p>
-</div>
-
-<div class="cards">
-
-  <div class="card">
-    <img src="freefire1.jpg">
-    <div class="card-content">
-      <h2>Free Fire Tela Parada e Tela Normal Cheat</h2>
-      <p>Versão mais recente</p>
-      <a class="btn" href="https://www.mediafire.com/file/pvruh75t64fgtjh/Loader.zip/file" target="_blank">Download</a>
-    </div>
+<div id="downloads" class="section active">
+  <div class="title">
+    <h1>Downloads</h1>
   </div>
 
-  <div class="card">
-    <img src="cs2.jpg">
-    <div class="card-content">
-      <h2>CS2 Cheat</h2>
-      <p>Versão mais recente</p>
-      <a class="btn" href="https://www.mediafire.com/file/85u0zfx29sludm8/inject.zip/file" target="_blank">Download</a>
+  <div class="cards">
+    <div class="card">
+      <img src="freefire1.jpg">
+      <div class="card-content">
+        <h2>Free Fire Tela Parada</h2>
+        <a class="btn" href="#">Download</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="cs2.jpg">
+      <div class="card-content">
+        <h2>CS2 Cheat</h2>
+        <a class="btn" href="#">Download</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="freefire.jpg">
+      <div class="card-content">
+        <h2>Free Fire</h2>
+        <a class="btn" href="#">Download</a>
+      </div>
     </div>
   </div>
-
-  <div class="card">
-    <img src="freefire.jpg">
-    <div class="card-content">
-      <h2>Free Fire Tela Normal Cheat</h2>
-      <p>Versão mais recente</p>
-      <a class="btn" href="https://www.mediafire.com/file/xnt8w19vhp0t55e/Drive.zip/file" target="_blank">Download</a>
-    </div>
-  </div>
-
 </div>
 
 <!-- SENHAS -->
-<div class="title">
-  <h1 id="senhas">Senhas</h1>
-  <p>Logins e acessos dos softwares</p>
-</div>
-
-<div class="cards">
-
-  <div class="card">
-    <div class="card-content">
-      <h2>Free Fire Tela Parada</h2>
-      <p>🔑 KEYAUTH</p>
-      <p><b>KEYAUTH-WHT_TELA_PARADA</b></p>
-    </div>
+<div id="senhas" class="section">
+  <div class="title">
+    <h1>Senhas</h1>
   </div>
 
-  <div class="card">
-    <div class="card-content">
-      <h2>Free Fire</h2>
-      <p>👤 Usuário: <b>whtfreefire</b></p>
-      <p>🔑 Senha: <b>1</b></p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-content">
+        <h2>Free Fire Tela Parada</h2>
+        <p><b>KEYAUTH-WHT_TELA_PARADA</b></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h2>Free Fire</h2>
+        <p>Usuário: whtfreefire</p>
+        <p>Senha: 1</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h2>CS2</h2>
+        <p>Usuário: whtcs2</p>
+        <p>Senha: 1</p>
+      </div>
     </div>
   </div>
-
-  <div class="card">
-    <div class="card-content">
-      <h2>CS2</h2>
-      <p>👤 Usuário: <b>whtcs2</b></p>
-      <p>🔑 Senha: <b>1</b></p>
-    </div>
-  </div>
-
 </div>
 
 </div>
-
-<footer></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
 <script>
+// alternar abas
+function showSection(id){
+  document.querySelectorAll('.section').forEach(sec => {
+    sec.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+}
+
+// particles
 particlesJS("particles-js",{
-  "particles":{
-    "number":{"value":80},
-    "color":{"value":"#4169E1"},
-    "shape":{"type":"circle"},
-    "opacity":{"value":0.5},
-    "size":{"value":3},
-    "line_linked":{
-      "enable":true,
-      "distance":150,
-      "color":"#4169E1",
-      "opacity":0.4,
-      "width":1
-    },
-    "move":{
-      "enable":true,
-      "speed":2
-    }
-  },
-  "interactivity":{
-    "events":{
-      "onhover":{
-        "enable":true,
-        "mode":"grab"
-      }
-    }
-  },
-  "retina_detect":true
+  particles:{
+    number:{value:80},
+    color:{value:"#4169E1"},
+    size:{value:3},
+    move:{speed:2}
+  }
 });
 </script>
 
