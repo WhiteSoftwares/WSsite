@@ -22,7 +22,7 @@ body{
 }
 
 /* PARTICULAS */
-#tsparticles{
+#particles-js{
   position:fixed;
   width:100%;
   height:100%;
@@ -157,7 +157,7 @@ nav a{
 
 <body>
 
-<div id="tsparticles"></div>
+<div id="particles-js"></div>
 
 <header>
   White Softwares
@@ -241,55 +241,48 @@ nav a{
 
 </div>
 
-<!-- tsparticles -->
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-<script>
-tsParticles.load("tsparticles", {
-  fpsLimit: 60,
-  particles: {
-    number: { value: 80, density: { enable: true, area: 800 } },
-    color: { value: "#2c3e50" }, // um pouco mais escuro
-    shape: { type: "circle" },
-    opacity: { value: 0.6 },
-    size: { value: 3, random: true },
-    links: {
-      enable: true,
-      distance: 150,
-      color: "#2c3e50",
-      opacity: 0.4,
-      width: 1,
-      maxConnections: 3 // máximo de 3 conexões por partícula
-    },
-    move: {
-      enable: true,
-      speed: 2,
-      direction: "none",
-      random: false,
-      straight: false,
-      outModes: { default: "bounce" }, // partículas não saem da tela
-      collide: true // habilita colisão
-    },
-    collisions: { enable: true, mode: "bounce" } // colisão real
-  },
-  interactivity: {
-    events: {
-      onHover: { enable: true, mode: "grab" },
-      onClick: { enable: false }
-    },
-    modes: {
-      grab: { distance: 150, links: { opacity: 0.5 } }
-    }
-  },
-  detectRetina: true
-});
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
+<script>
 // alternar abas
 function showSection(id){
   document.querySelectorAll('.section').forEach(sec => {
     sec.classList.remove('active');
   });
+
   document.getElementById(id).classList.add('active');
 }
+
+// particles
+particlesJS("particles-js",{
+  "particles":{
+    "number":{"value":80},
+    "color":{"value":"#4169E1"},
+    "shape":{"type":"circle"},
+    "opacity":{"value":0.5},
+    "size":{"value":3},
+    "line_linked":{
+      "enable":true,
+      "distance":150,
+      "color":"#4169E1",
+      "opacity":0.4,
+      "width":1
+    },
+    "move":{
+      "enable":true,
+      "speed":2
+    }
+  },
+  "interactivity":{
+    "events":{
+      "onhover":{
+        "enable":true,
+        "mode":"grab"
+      }
+    }
+  },
+  "retina_detect":true
+});
 </script>
 
 </body>
