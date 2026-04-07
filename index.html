@@ -152,6 +152,40 @@ nav a{
     flex-direction:column;
   }
 }
+.copy-btn {
+  position: relative;
+  background: #4169E1;
+  border: none;
+  color: white;
+  padding: 2px 6px;
+  margin-left: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.copy-btn:hover {
+  background: #2e52c2;
+}
+
+/* Tooltip temporário */
+.copy-tooltip {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4169E1;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.copy-tooltip.show {
+  opacity: 1;
+}
 </style>
 </head>
 
@@ -261,21 +295,7 @@ nav a{
 
 </div>
 
-  <style>
-.copy-btn {
-  background: #4169E1;
-  border: none;
-  color: white;
-  padding: 2px 6px;
-  margin-left: 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-.copy-btn:hover {
-  background: #2e52c2;
-}
-</style>
+  
 
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
@@ -324,11 +344,28 @@ tsParticles.load("particles-js", {
   retina_detect: true
 });
 
-  function copyText(id) {
+ function copyText(id) {
   const text = document.getElementById(id).innerText;
   navigator.clipboard.writeText(text)
     .then(() => {
-      alert("Copiado: " + text);
+      const btn = document.querySelector(`#${id}`).nextElementSibling;
+
+      // criar tooltip se não existir
+      let tooltip = btn.querySelector('.copy-tooltip');
+      if (!tooltip) {
+        tooltip = document.createElement('span');
+        tooltip.className = 'copy-tooltip';
+        tooltip.innerText = 'Copiado!';
+        btn.appendChild(tooltip);
+      }
+
+      // mostrar tooltip
+      tooltip.classList.add('show');
+
+      // remover após 1,5s
+      setTimeout(() => {
+        tooltip.classList.remove('show');
+      }, 1500);
     })
     .catch(err => {
       console.error("Erro ao copiar: ", err);
