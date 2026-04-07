@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>White Softwares</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:white;
+  color:#111;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* PARTICULAS */
+#particles-js{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+/* HEADER */
+header{
+  background:#4169E1;
+  color:white;
+  padding:20px;
+  font-size:32px;
+  text-align:center;
+  position:relative;
+}
+
+/* DISCORD */
+.discord-card{
+  position:absolute;
+  top:15px;
+  right:20px;
+  width:50px;
+  background:white;
+  border-radius:6px;
+  overflow:hidden;
+}
+
+.discord-card img{
+  width:100%;
+  display:block;
+}
+
+.discord-card a{
+  display:block;
+  background:#4169E1;
+  color:white;
+  font-size:10px;
+  text-decoration:none;
+}
+
+/* MENU */
+nav{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  background:#2e52c2;
+  padding:12px;
+}
+
+nav a{
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:50px 20px;
+  flex:1;
+}
+
+/* SEÇÕES (IMPORTANTE) */
+.section{
+  display:none;
+}
+
+.section.active{
+  display:block;
+}
+
+/* TITULO */
+.title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.title h1{
+  color:#4169E1;
+  font-size:36px;
+}
+
+/* CARDS */
+.cards{
+  display:flex;
+  gap:40px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.card{
+  flex:1 1 400px;
+  max-width:400px;
+  border:3px solid #4169E1;
+  border-radius:12px;
+  text-align:center;
+  overflow:hidden;
+}
+
+.card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:20px;
+}
+
+/* BOTÃO */
+.btn{
+  display:inline-block;
+  margin-top:10px;
+  background:#4169E1;
+  color:white;
+  padding:12px 25px;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .cards{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+  White Softwares
+  <div class="discord-card">
+    <img src="discord.jpg">
+    <a href="https://discord.gg/ZhT2fgQtBN" target="_blank">Discord</a>
+  </div>
+</header>
+
+<nav>
+  <a onclick="showSection('downloads')">Downloads</a>
+  <a onclick="showSection('senhas')">Senhas</a>
+</nav>
+
+<div class="container">
+
+<!-- DOWNLOADS -->
+<div id="downloads" class="section active">
+  <div class="title">
+    <h1>Downloads</h1>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <img src="freefire1.jpg">
+      <div class="card-content">
+        <h2>Free Fire Tela Parada</h2>
+        <a class="btn" href="#">Download</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="cs2.jpg">
+      <div class="card-content">
+        <h2>CS2 Cheat</h2>
+        <a class="btn" href="#">Download</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="freefire.jpg">
+      <div class="card-content">
+        <h2>Free Fire</h2>
+        <a class="btn" href="#">Download</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SENHAS -->
+<div id="senhas" class="section">
+  <div class="title">
+    <h1>Senhas</h1>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-content">
+        <h2>Free Fire Tela Parada</h2>
+        <p>KEYAUTH-WHT_TELA_PARADA</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h2>Free Fire Tela Normal</h2>
+        <p>Usuário: whtfreefire</p>
+        <p>Senha: 1</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h2>CS2</h2>
+        <p>Usuário: whtcs2</p>
+        <p>Senha: 1</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<script>
+// alternar abas
+function showSection(id){
+  document.querySelectorAll('.section').forEach(sec => {
+    sec.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+}
+
+// particles
+particlesJS("particles-js",{
+  "particles":{
+    "number":{"value":80},
+    "color":{"value":"#4169E1"},
+    "shape":{"type":"circle"},
+    "opacity":{"value":0.5},
+    "size":{"value":3},
+    "line_linked":{
+      "enable":true,
+      "distance":150,
+      "color":"#4169E1",
+      "opacity":0.4,
+      "width":1
+    },
+    "move":{
+      "enable":true,
+      "speed":2
+    }
+  },
+  "interactivity":{
+    "events":{
+      "onhover":{
+        "enable":true,
+        "mode":"grab"
+      }
+    }
+  },
+  "retina_detect":true
+});
+</script>
+
+</body>
+</html>
