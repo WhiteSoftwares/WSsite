@@ -21,7 +21,7 @@ body{
   flex-direction:column;
 }
 
-/* PARTICULAS */
+
 #particles-js{
   position:fixed;
   width:100%;
@@ -31,7 +31,7 @@ body{
   z-index:-1;
 }
 
-/* HEADER */
+
 header{
   background:#4169E1;
   color:white;
@@ -41,7 +41,7 @@ header{
   position:relative;
 }
 
-/* DISCORD */
+
 .discord-card{
   position:absolute;
   top:15px;
@@ -65,7 +65,7 @@ header{
   text-decoration:none;
 }
 
-/* MENU */
+
 nav{
   display:flex;
   justify-content:center;
@@ -80,7 +80,7 @@ nav a{
   cursor:pointer;
 }
 
-/* CONTAINER */
+
 .container{
   max-width:1200px;
   margin:auto;
@@ -88,7 +88,7 @@ nav a{
   flex:1;
 }
 
-/* SEÇÕES (IMPORTANTE) */
+
 .section{
   display:none;
 }
@@ -97,7 +97,7 @@ nav a{
   display:block;
 }
 
-/* TITULO */
+
 .title{
   text-align:center;
   margin-bottom:40px;
@@ -108,7 +108,7 @@ nav a{
   font-size:36px;
 }
 
-/* CARDS */
+
 .cards{
   display:flex;
   gap:40px;
@@ -135,7 +135,7 @@ nav a{
   padding:20px;
 }
 
-/* BOTÃO */
+
 .btn{
   display:inline-block;
   margin-top:10px;
@@ -174,7 +174,7 @@ nav a{
 
 <div class="container">
 
-<!-- DOWNLOADS -->
+
 <div id="downloads" class="section active">
   <div class="title">
     <h1>Downloads</h1>
@@ -207,7 +207,7 @@ nav a{
   </div>
 </div>
 
-<!-- SENHAS -->
+
 <div id="senhas" class="section">
   <div class="title">
     <h1>Senhas</h1>
@@ -241,11 +241,11 @@ nav a{
 
 </div>
 
-<!-- tsParticles -->
+
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
 <script>
-// alternar abas
+
 function showSection(id){
   document.querySelectorAll('.section').forEach(sec => {
     sec.classList.remove('active');
@@ -272,10 +272,10 @@ tsParticles.load("particles-js", {
     move: {
       enable: true,
       speed: 2,
-      bounce: true    // <-- quica nas bordas
+      bounce: true    
     },
     collisions: {
-      enable: true    // <-- colisão real
+      enable: true    
     }
   },
   interactivity: {
