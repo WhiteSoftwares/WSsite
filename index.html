@@ -4,160 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>White Softwares</title>
-
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-  background:white;
-  color:#111;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-}
-
-/* PARTICULAS */
-#particles-js{
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  z-index:-1;
-}
-
-/* HEADER */
-header{
-  background:#4169E1;
-  color:white;
-  padding:20px;
-  font-size:32px;
-  text-align:center;
-  position:relative;
-}
-
-/* DISCORD */
-.discord-card{
-  position:absolute;
-  top:15px;
-  right:20px;
-  width:50px;
-  background:white;
-  border-radius:6px;
-  overflow:hidden;
-}
-
-.discord-card img{
-  width:100%;
-  display:block;
-}
-
-.discord-card a{
-  display:block;
-  background:#4169E1;
-  color:white;
-  font-size:10px;
-  text-decoration:none;
-}
-
-/* MENU */
-nav{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  background:#2e52c2;
-  padding:12px;
-}
-
-nav a{
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* CONTAINER */
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:50px 20px;
-  flex:1;
-}
-
-/* SEÇÕES (IMPORTANTE) */
-.section{
-  display:none;
-}
-
-.section.active{
-  display:block;
-}
-
-/* TITULO */
-.title{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.title h1{
-  color:#4169E1;
-  font-size:36px;
-}
-
-/* CARDS */
-.cards{
-  display:flex;
-  gap:40px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.card{
-  flex:1 1 400px;
-  max-width:400px;
-  border:3px solid #4169E1;
-  border-radius:12px;
-  text-align:center;
-  overflow:hidden;
-}
-
-.card img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-}
-
-.card-content{
-  padding:20px;
-}
-
-/* BOTÃO */
-.btn{
-  display:inline-block;
-  margin-top:10px;
-  background:#4169E1;
-  color:white;
-  padding:12px 25px;
-  border-radius:8px;
-  text-decoration:none;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  .cards{
-    flex-direction:column;
-  }
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{background:white;color:#111;min-height:100vh;display:flex;flex-direction:column;position:relative;}
+#canvas-container{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
+header{background:#4169E1;color:white;padding:20px;font-size:32px;text-align:center;position:relative;}
+.discord-card{position:absolute;top:15px;right:20px;width:50px;background:white;border-radius:6px;overflow:hidden;}
+.discord-card img{width:100%;display:block;}
+.discord-card a{display:block;background:#4169E1;color:white;font-size:10px;text-decoration:none;text-align:center;}
+nav{display:flex;justify-content:center;gap:40px;background:#2e52c2;padding:12px;}
+nav a{color:white;font-weight:bold;cursor:pointer;text-decoration:none;}
+.container{max-width:1200px;margin:auto;padding:50px 20px;flex:1;}
+.section{display:none;}
+.section.active{display:block;}
+.title{text-align:center;margin-bottom:40px;}
+.title h1{color:#4169E1;font-size:36px;}
+.cards{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;}
+.card{flex:1 1 400px;max-width:400px;border:3px solid #4169E1;border-radius:12px;text-align:center;overflow:hidden;}
+.card img{width:100%;height:260px;object-fit:cover;}
+.card-content{padding:20px;}
+.btn{display:inline-block;margin-top:10px;background:#4169E1;color:white;padding:12px 25px;border-radius:8px;text-decoration:none;}
+@media(max-width:600px){.cards{flex-direction:column;}}
 </style>
 </head>
-
 <body>
 
-<div id="particles-js"></div>
+<div id="canvas-container"></div>
 
 <header>
   White Softwares
@@ -176,10 +48,7 @@ nav a{
 
 <!-- DOWNLOADS -->
 <div id="downloads" class="section active">
-  <div class="title">
-    <h1>Downloads</h1>
-  </div>
-
+  <div class="title"><h1>Downloads</h1></div>
   <div class="cards">
     <div class="card">
       <img src="freefire1.jpg">
@@ -188,7 +57,6 @@ nav a{
         <a class="btn" href="#">Download</a>
       </div>
     </div>
-
     <div class="card">
       <img src="cs2.jpg">
       <div class="card-content">
@@ -196,7 +64,6 @@ nav a{
         <a class="btn" href="#">Download</a>
       </div>
     </div>
-
     <div class="card">
       <img src="freefire.jpg">
       <div class="card-content">
@@ -209,81 +76,111 @@ nav a{
 
 <!-- SENHAS -->
 <div id="senhas" class="section">
-  <div class="title">
-    <h1>Senhas</h1>
-  </div>
-
+  <div class="title"><h1>Senhas</h1></div>
   <div class="cards">
     <div class="card">
-      <div class="card-content">
-        <h2>Free Fire Tela Parada</h2>
-        <p>KEYAUTH-WHT_TELA_PARADA</p>
-      </div>
+      <div class="card-content"><h2>Free Fire Tela Parada</h2><p>KEYAUTH-WHT_TELA_PARADA</p></div>
     </div>
-
     <div class="card">
-      <div class="card-content">
-        <h2>Free Fire Tela Normal</h2>
-        <p>Usuário: whtfreefire</p>
-        <p>Senha: 1</p>
-      </div>
+      <div class="card-content"><h2>Free Fire Tela Normal</h2><p>Usuário: whtfreefire</p><p>Senha: 1</p></div>
     </div>
-
     <div class="card">
-      <div class="card-content">
-        <h2>CS2</h2>
-        <p>Usuário: whtcs2</p>
-        <p>Senha: 1</p>
-      </div>
+      <div class="card-content"><h2>CS2</h2><p>Usuário: whtcs2</p><p>Senha: 1</p></div>
     </div>
   </div>
 </div>
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-
+<!-- p5.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
 <script>
-// alternar abas
 function showSection(id){
-  document.querySelectorAll('.section').forEach(sec => {
-    sec.classList.remove('active');
-  });
-
+  document.querySelectorAll('.section').forEach(sec=>sec.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
 
-// particles
-particlesJS("particles-js",{
-  "particles":{
-    "number":{"value":80},
-    "color":{"value":"#4169E1"},
-    "shape":{"type":"circle"},
-    "opacity":{"value":0.5},
-    "size":{"value":3},
-    "line_linked":{
-      "enable":true,
-      "distance":150,
-      "color":"#4169E1",
-      "opacity":0.4,
-      "width":1
-    },
-    "move":{
-      "enable":true,
-      "speed":2
-    }
-  },
-  "interactivity":{
-    "events":{
-      "onhover":{
-        "enable":true,
-        "mode":"grab"
+// Partículas físicas
+let particles = [];
+let particleCount = 80;
+
+function setup(){
+  let canvas = createCanvas(windowWidth, windowHeight);
+  canvas.parent("canvas-container");
+  for(let i=0;i<particleCount;i++){
+    particles.push(new Particle(random(width), random(height)));
+  }
+}
+
+function draw(){
+  clear();
+  background(255,255,255,0); // transparente
+  for(let p of particles){
+    p.update();
+    p.edges();
+  }
+  for(let p of particles){
+    p.connect(particles);
+  }
+  for(let p of particles){
+    p.show();
+  }
+}
+
+// Partícula
+class Particle {
+  constructor(x,y){
+    this.pos = createVector(x,y);
+    this.vel = p5.Vector.random2D().mult(random(1,2));
+    this.mass = random(1,2);
+    this.radius = this.mass*5;
+  }
+  
+  update(){
+    this.pos.add(this.vel);
+    // colisão com outras partículas
+    for(let other of particles){
+      if(other!==this){
+        let d = dist(this.pos.x,this.pos.y,other.pos.x,other.pos.y);
+        if(d < this.radius + other.radius){
+          let angle = atan2(other.pos.y-this.pos.y, other.pos.x-this.pos.x);
+          let force = p5.Vector.fromAngle(angle).mult(0.5);
+          this.vel.sub(force);
+          other.vel.add(force);
+        }
       }
     }
-  },
-  "retina_detect":true
-});
-</script>
+  }
+  
+  edges(){
+    if(this.pos.x < this.radius || this.pos.x>width-this.radius) this.vel.x*=-1;
+    if(this.pos.y < this.radius || this.pos.y>height-this.radius) this.vel.y*=-1;
+  }
+  
+  connect(particles){
+    let connections = 0;
+    for(let other of particles){
+      if(other!==this && connections<3){
+        let d = dist(this.pos.x,this.pos.y,other.pos.x,other.pos.y);
+        if(d<150){
+          stroke(65,105,225,100);
+          line(this.pos.x,this.pos.y,other.pos.x,other.pos.y);
+          connections++;
+        }
+      }
+    }
+  }
+  
+  show(){
+    noStroke();
+    fill(65,105,225);
+    ellipse(this.pos.x,this.pos.y,this.radius*2);
+  }
+}
 
+function windowResized(){
+  resizeCanvas(windowWidth, windowHeight);
+}
+</script>
 </body>
 </html>
