@@ -241,7 +241,8 @@ nav a{
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<!-- tsParticles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
 <script>
 // alternar abas
@@ -253,35 +254,39 @@ function showSection(id){
   document.getElementById(id).classList.add('active');
 }
 
-// particles
-particlesJS("particles-js",{
-  "particles":{
-    "number":{"value":80},
-    "color":{"value":"#4169E1"},
-    "shape":{"type":"circle"},
-    "opacity":{"value":0.5},
-    "size":{"value":3},
-    "line_linked":{
-      "enable":true,
-      "distance":150,
-      "color":"#4169E1",
-      "opacity":0.4,
-      "width":1
+// particles com colisão real
+tsParticles.load("particles-js", {
+  particles: {
+    number: { value: 80 },
+    color: { value: "#4169E1" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    links: {
+      enable: true,
+      distance: 150,
+      color: "#4169E1",
+      opacity: 0.4,
+      width: 1
     },
-    "move":{
-      "enable":true,
-      "speed":2
+    move: {
+      enable: true,
+      speed: 2,
+      bounce: true    // <-- quica nas bordas
+    },
+    collisions: {
+      enable: true    // <-- colisão real
     }
   },
-  "interactivity":{
-    "events":{
-      "onhover":{
-        "enable":true,
-        "mode":"grab"
+  interactivity: {
+    events: {
+      onhover: {
+        enable: true,
+        mode: "grab"
       }
     }
   },
-  "retina_detect":true
+  retina_detect: true
 });
 </script>
 
